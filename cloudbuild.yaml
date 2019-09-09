@@ -1,5 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker' 
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/ratingservice:$BRANCH_NAME-$REVISION_ID', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/ratingservice:$BRANCH_NAME-$REVISION_ID',
+  '--no-cache','true','.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/ratingservice:$BRANCH_NAME-$REVISION_ID']
